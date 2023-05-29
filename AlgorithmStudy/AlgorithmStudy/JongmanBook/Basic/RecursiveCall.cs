@@ -4,6 +4,7 @@ using System.Linq;
 
 namespace AlgorithmStudy.JongmanBook.Solving
 {
+    // 1권 146p 재귀 호출과 완전 탐색
     public class RecursiveCall
     {
         private List<int> picked = new List<int>();

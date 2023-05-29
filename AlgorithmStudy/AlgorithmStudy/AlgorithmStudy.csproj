@@ -39,14 +39,14 @@
         <Reference Include="System.Xml" />
     </ItemGroup>
     <ItemGroup>
-        <Compile Include="JongmanBook\Solution.cs" />
-        <Compile Include="JongmanBook\Solving\RecursiveCall.cs" />
+        <Compile Include="JongmanBook\Basic\RecursiveCall.cs" />
+        <Compile Include="JongmanBook\Problems\Boggle.cs" />
         <Compile Include="Program.cs" />
         <Compile Include="Programmers\Solution.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
     </ItemGroup>
     <ItemGroup>
-      <Folder Include="Programmers\Solving" />
+      <Folder Include="Programmers\Problems" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
     <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
