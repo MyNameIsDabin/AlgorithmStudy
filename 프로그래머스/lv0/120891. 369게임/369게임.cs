@@ -9,7 +9,6 @@ public class Solution
 
         var count = order
             .ToString()
-            .ToCharArray()
             .Count(x =>
             {
                 var number = (x + toNumber);
