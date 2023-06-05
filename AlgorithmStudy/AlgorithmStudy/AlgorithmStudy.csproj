@@ -42,6 +42,7 @@
         <Compile Include="JongmanBook\Basic\RecursiveCall.cs" />
         <Compile Include="JongmanBook\Problems\Boggle.cs" />
         <Compile Include="Program.cs" />
+        <Compile Include="Programmers\Basic\PermutationRecursiveCall.cs" />
         <Compile Include="Programmers\Solution.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
     </ItemGroup>

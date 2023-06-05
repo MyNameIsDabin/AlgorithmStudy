@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Linq;
 
 namespace AlgorithmStudy
 {
@@ -6,7 +7,7 @@ namespace AlgorithmStudy
     {
         public static void Main(string[] args)
         {
-            JongmanBook.Problems.Boggle.RunTest();
+            
         }
     }
 }
