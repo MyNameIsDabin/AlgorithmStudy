@@ -1,34 +1,38 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 using System.Text;
 
 namespace AlgorithmStudy
 {
-    public class Solution 
+    public class Solution
     {
-        public void Permutation(int[] arr, int depth)
+        public int solution(string[] spell, string[] dic)
         {
-            if (depth == arr.Length)
+            var spells = spell
+                .Select(x => x.ToCharArray()[0])
+                .ToArray();
+            
+            for (var i = 0; i < dic.Length; i++)
             {
-                Console.WriteLine(string.Join(", ", arr.Select(x => x.ToString()).ToArray()));
-                return;
+                var count = 0;
+                for (var j = 0; j < spells.Length; j++)
+                {
+                    var c = spells[j];
+                    var findIndex = Array.FindIndex(dic[i].ToArray(), x => x == c);
+
+                    if (findIndex >= 0)
+                    {
+                        dic[i] = dic[i].Remove(findIndex, 1);
+                        count++;
+                    }
+                }
+
+                if (dic[i].Length == 0 && count == spells.Length)
+                    return 1;
             }
 
-            for (var i = depth; i < arr.Length; i++)
-            {
-                Swap(ref arr[depth], ref arr[i]);
-                Permutation(arr, depth + 1);
-                Swap(ref arr[depth], ref arr[i]);
-            }
-        }
-
-        public void Swap(ref int lv, ref int rv)
-        {
-            var temp = lv;
-            lv = rv;
-            rv = temp;
+            return 2;
         }
     }
     
@@ -37,8 +41,16 @@ namespace AlgorithmStudy
         public static void Main(string[] args)
         {
             var solution = new Solution();
+            
+            Console.WriteLine(solution.solution(new [] {"s", "o", "m", "d"}, new [] {"moos", "dzx", "smm", "sunmmo", "som"}));
 
-            solution.Permutation(new [] { 1, 2, 3 }, 0);
+            // for (int i = 0; i < 100; i++)
+            // {
+            //     Console.WriteLine($"----------{i}----------");
+            //     Console.WriteLine(string.Join(", ", solution.solution(i).Select(x => x.ToString()).ToArray()));    
+            // }
+
+            //Console.WriteLine(string.Join(", ", solution.solution("3 + 4").Select(x => x.ToString()).ToArray()));
         }
     }
 }
